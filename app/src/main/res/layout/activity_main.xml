@@ -1,0 +1,174 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="live"
+            type="com.add.appxm.Live" />
+        <variable
+            name="wea"
+            type="com.add.appxm.Wea" />
+
+        <variable
+            name="dmgd"
+            type="com.add.appxm.Dmgd" />
+
+        <variable
+            name="dm1d"
+            type="com.add.appxm.Dm1d" />
+
+        <variable
+            name="dmrd"
+            type="com.add.appxm.Dmrd" />
+
+        <variable
+            name="dm5d"
+            type="com.add.appxm.Dm5d" />
+
+        <variable
+            name="date"
+            type="String" />
+
+        <variable
+            name="update"
+            type="String" />
+
+        <variable
+            name="backIndex"
+            type="Integer" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="728px"
+        android:layout_height="416px"
+
+        android:background="@drawable/back"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="2px"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                setTextColor="@{backIndex}"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="江北气象"
+                android:textSize="@dimen/maintitle" />
+
+            <TextView
+                setTextColor="@{backIndex}"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="12sp" />
+
+            <TextView
+                setTextColor="@{backIndex}"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:paddingRight="9px"
+                android:text="@{date}"
+                android:textSize="@dimen/maindate" />
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5.5"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                android:visibility="invisible"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="3.2"
+                android:orientation="vertical">
+
+                <TextView
+                    setTextColor="@{backIndex}"
+                    android:gravity="center"
+                    android:text="@{update}"
+                    android:textSize="12sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0px"
+                    android:layout_weight="0.3" />
+
+                <LinearLayout
+                    android:id="@+id/contenter"
+                    android:layout_width="match_parent"
+                    android:layout_height="0px"
+                    android:layout_weight="3.2"
+                    android:orientation="horizontal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+               >
+                <com.add.appxm.TempView
+                    app:besideColor="@color/colorWhite"
+                    app:centerColor="@color/colorRed"
+                    app:insideColor="@color/colorRed"
+                    app:offbottom="5"
+                    app:offleft="40"
+                    app:offright="45"
+                    app:offtop="5"
+                    setTemp="@{live.wea_wendu}"
+                    app:stoke="3"
+                    app:besideStoke="2"
+                    app:centerWidth="15"
+                    app:scaleTextSize="16"
+                    app:textSize="16"
+                    app:textColor="@color/colorWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#333"
+                android:gravity="center"
+                android:text="天气预报"
+                android:textColor="#fff"
+                android:textSize="@dimen/mainwea" />
+
+            <com.add.appxm.MarqueeView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:background="#555"
+                app:marqueeview_text_color="#fff"
+                app:marqueeview_text_size="50"
+                app:marqueeview_text_speed="2.0"
+                app:setText="@{wea.wea_txt1}" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

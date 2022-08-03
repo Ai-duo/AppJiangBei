@@ -1,0 +1,247 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="zhishu"
+            type="com.add.appxm.Zhishu" />
+
+        <variable
+            name="dmrd"
+            type="com.add.appxm.Dmrd" />
+
+        <variable
+            name="dm5d"
+            type="com.add.appxm.Dm5d" />
+    </data>
+
+    <LinearLayout
+
+
+        android:layout_marginLeft="20px"
+        android:layout_marginBottom="30px"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/b2"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="0.05"
+            android:orientation="vertical" />
+
+        <LinearLayout
+
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="3"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.3"
+                    android:paddingLeft="@dimen/secondpagepadd"
+                    android:paddingTop="@dimen/secondpagepadd"
+                    android:paddingRight="@dimen/secondpagepadd"
+                    android:paddingBottom="@dimen/secondpagepadd"
+                    android:src="@drawable/cy" />
+
+                <TextView
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="穿衣\n指数"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/secondpagetextsize" />
+
+                <TextView
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="@{zhishu.cyzslevel}"
+                    android:textColor="#ff0"
+                    android:textSize="@dimen/secondpageindexsize" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1.5"
+                android:gravity="center_horizontal"
+
+                android:text="@{zhishu.cyzs}"
+                android:textColor="#000"
+                android:textSize="@dimen/secondpageinfosize" />
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="3"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/secondpagepadd"
+                    android:paddingTop="@dimen/secondpagepadd"
+                    android:paddingRight="@dimen/secondpagepadd"
+                    android:paddingBottom="@dimen/secondpagepadd"
+                    android:src="@drawable/hx" />
+
+                <TextView
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="森林\n火险"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/secondpagetextsize" />
+
+                <TextView
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="@{zhishu.slhxlevel}"
+                    android:textColor="#ff0"
+                    android:textSize="@dimen/secondpageindexsize" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1.5"
+                android:gravity="center_horizontal"
+                android:text="@{zhishu.slhx}"
+                android:textColor="#000"
+                android:textSize="@dimen/secondpageinfosize" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="3"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/secondpagepadd"
+                    android:paddingTop="@dimen/secondpagepadd"
+                    android:paddingRight="@dimen/secondpagepadd"
+                    android:paddingBottom="@dimen/secondpagepadd"
+                    android:src="@drawable/ganmao" />
+
+                <TextView
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="感冒\n指数"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/secondpagetextsize" />
+
+                <TextView
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="@{zhishu.jyzslevel}"
+                    android:textColor="#ff0"
+                    android:textSize="@dimen/secondpageindexsize" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1.5"
+                android:gravity="center_horizontal"
+                android:text="@{zhishu.jyzs}"
+                android:textColor="#000"
+                android:textSize="@dimen/secondpageinfosize" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="3"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.3"
+                    android:paddingLeft="@dimen/secondpagepadd"
+                    android:paddingTop="@dimen/secondpagepadd"
+                    android:paddingRight="@dimen/secondpagepadd"
+                    android:paddingBottom="@dimen/secondpagepadd"
+                    android:src="@drawable/zwx" />
+
+                <TextView
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="紫外线"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/secondpagetextsize" />
+
+                <TextView
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="@{zhishu.zwxlevel.replace(`，`,`\n`)}"
+                    android:textColor="#ff0"
+                    android:textSize="@dimen/secondpageindexsize" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1.5"
+                android:gravity="center_horizontal"
+                android:text="@{zhishu.zwx}"
+                android:textColor="#000"
+                android:textSize="@dimen/secondpageinfosize" />
+        </LinearLayout>
+
+        <!--  <LinearLayout
+
+              android:background="#f00"
+              android:layout_width="2px"
+              android:layout_height="match_parent" />-->
+
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="0.05"
+            android:orientation="vertical" />
+    </LinearLayout>
+</layout>

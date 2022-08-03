@@ -1,0 +1,24 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="txt"
+            type="String" />
+    </data>
+    <LinearLayout
+        android:layout_marginLeft="20px"
+        android:layout_marginBottom="30px"
+        android:background="@drawable/b4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+      >
+        <TextView
+            android:gravity="center"
+            android:lineSpacingExtra="6px"
+            android:padding="10px"
+            android:text="@{txt??`暂无预报信息`}"
+            android:textSize="18px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</layout>

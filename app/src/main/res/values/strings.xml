@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">AppHS</string>
+    <dimen name="maintitle">23sp</dimen>
+    <dimen name="maindate">11sp</dimen>
+    <dimen name="mainwea">20sp</dimen>
+    <dimen name="mainweainfo">35sp</dimen>
+    <dimen name="firstpagepadd">7px</dimen>
+    <dimen name="firstpagetextsize">12sp</dimen>
+    <dimen name="firstpageindexsize">35sp</dimen>
+    <dimen name="secondpagepadd">7px</dimen>
+    <dimen name="secondpagetextsize">12sp</dimen>
+    <dimen name="secondpageindexsize">15sp</dimen>
+    <dimen name="secondpageinfosize">8sp</dimen>
+    <dimen name="thirdpagepadd">7px</dimen>
+    <dimen name="thirdpagetextsize">35sp</dimen>
+    <dimen name="thirdpageindexsize">35sp</dimen>
+    <dimen name="dateSize">10sp</dimen>
+    <dimen name="dateinfoSize">10sp</dimen>
+    <dimen name="weainfoSize">10sp</dimen>
+</resources>

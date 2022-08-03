@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+    dataBinding {
+        enabled=true;
+    }
+    defaultConfig {
+        applicationId "com.add.appjiangbei"
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 2
+        versionName "1.1"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+   /* android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                outputFileName = "appyj_${defaultConfig.versionName}_.apk"
+            }
+        }
+    }*/
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation files('libs\\xixun_card_settings_1.2.4.jar')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.1'
+}
