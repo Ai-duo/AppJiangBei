@@ -20,26 +20,26 @@ public class SevenWea {
     public String txt7_date;
 
 
-    public int txt1_max;
-    public int txt1_min;
+    public float txt1_max;
+    public float txt1_min;
     public String txt1;
-    public int txt2_max;
-    public int txt2_min;
+    public float txt2_max;
+    public float txt2_min;
     public String txt2;
-    public int txt3_max;
-    public int txt3_min;
+    public float txt3_max;
+    public float txt3_min;
     public String txt3;
-    public int txt4_max;
-    public int txt4_min;
+    public float txt4_max;
+    public float txt4_min;
     public String txt4;
-    public int txt5_max;
-    public int txt5_min;
+    public float txt5_max;
+    public float txt5_min;
     public String txt5;
-    public int txt6_max;
-    public int txt6_min;
+    public float txt6_max;
+    public float txt6_min;
     public String txt6;
-    public int txt7_max;
-    public int txt7_min;
+    public float txt7_max;
+    public float txt7_min;
     public String txt7;
 
     public String txt1_week;
@@ -58,15 +58,15 @@ public class SevenWea {
     public String wea_txt5;
     public String wea_txt6;
     public String wea_txt7;
-    public int maxNum;
-    public int minNum;
+    public float maxNum;
+    public float minNum;
     public void build() {
         String[] ss1 = toArray(wea_txt1);
         txt1_date = ss1[0];
         txt1 = ss1[1];
         //txt1_week = ss1[1];
-        txt1_min = Integer.parseInt(ss1[2]);
-        txt1_max = Integer.parseInt(ss1[3]);
+        txt1_min = Float.parseFloat(ss1[2]);
+        txt1_max = Float.parseFloat(ss1[3]);
        if (maxNum<txt1_max){
            maxNum = txt1_max;
        }
@@ -77,8 +77,8 @@ public class SevenWea {
         txt2_date = ss2[0];
         txt2 = ss2[1];
        // txt2_week = ss2[1];
-        txt2_min = Integer.parseInt(ss2[2]);
-        txt2_max = Integer.parseInt(ss2[3]);
+        txt2_min =Float.parseFloat(ss2[2]);
+        txt2_max = Float.parseFloat(ss2[3]);
         if (maxNum<txt2_max){
             maxNum = txt2_max;
         }
@@ -89,8 +89,8 @@ public class SevenWea {
         txt3_date = ss3[0];
         txt3 = ss3[1];
         //txt3_week = ss3[1];
-        txt3_min = Integer.parseInt(ss3[2]);
-        txt3_max = Integer.parseInt(ss3[3]);
+        txt3_min = Float.parseFloat(ss3[2]);
+        txt3_max = Float.parseFloat(ss3[3]);
         if (maxNum<txt3_max){
             maxNum = txt3_max;
         }
@@ -101,8 +101,8 @@ public class SevenWea {
         txt4_date = ss4[0];
         txt4 = ss4[1];
       //  txt4_week = ss4[1];
-        txt4_min = Integer.parseInt(ss4[2]);
-        txt4_max = Integer.parseInt(ss4[3]);
+        txt4_min = Float.parseFloat(ss4[2]);
+        txt4_max = Float.parseFloat(ss4[3]);
         if (maxNum<txt4_max){
             maxNum = txt4_max;
         }
@@ -113,8 +113,8 @@ public class SevenWea {
         txt5_date = ss5[0];
         txt5 = ss5[1];
         //txt5_week = ss5[1];
-        txt5_min = Integer.parseInt(ss5[2]);
-        txt5_max = Integer.parseInt(ss5[3]);
+        txt5_min = Float.parseFloat(ss5[2]);
+        txt5_max = Float.parseFloat(ss5[3]);
         if (maxNum<txt5_max){
             maxNum = txt5_max;
         }
@@ -125,8 +125,8 @@ public class SevenWea {
         txt6_date = ss6[0];
         txt6 = ss6[1];
        // txt6_week = ss6[1];
-        txt6_min = Integer.parseInt(ss6[2]);
-        txt6_max = Integer.parseInt(ss6[3]);
+        txt6_min = Float.parseFloat(ss6[2]);
+        txt6_max =Float.parseFloat(ss6[3]);
         if (maxNum<txt6_max){
             maxNum = txt6_max;
         }
@@ -137,8 +137,8 @@ public class SevenWea {
         txt7_date = ss7[0];
         txt7 = ss7[1];
       //  txt7_week = ss7[1];
-        txt7_min = Integer.parseInt(ss7[2]);
-        txt7_max = Integer.parseInt(ss7[3]);
+        txt7_min = Float.parseFloat(ss7[2]);
+        txt7_max = Float.parseFloat(ss7[3]);
 
         if (maxNum<txt7_max){
             maxNum = txt7_max;

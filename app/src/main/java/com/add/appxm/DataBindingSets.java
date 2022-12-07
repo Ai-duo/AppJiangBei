@@ -34,6 +34,21 @@ public  class DataBindingSets {
             view.setTextColor(Color.argb(255,255,255,0));
         }
     }
+    @BindingAdapter("setOxImage")
+    public static void setOxImage(ImageView view, int index) {
+        switch (index){
+            case 1:
+                view.setImageResource(R.drawable.ox);
+                break;
+            case 2:
+                view.setImageResource(R.drawable.ojg);
+                break;
+            case 3:
+                view.setImageResource(R.drawable.og);
+                break;
+        }
+    }
+
     @BindingAdapter("setText")
     public static void setText(MarqueeView view, String text){
         if (TextUtils.isEmpty(text))return;

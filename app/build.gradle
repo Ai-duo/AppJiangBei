@@ -7,7 +7,7 @@ android {
         enabled=true;
     }
     defaultConfig {
-        applicationId "com.add.appjiangbei"
+        applicationId "com.add.apppingyang"
         minSdkVersion 16
         targetSdkVersion 30
         versionCode 2

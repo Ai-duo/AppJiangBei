@@ -187,7 +187,7 @@ public class ThirdFragment extends Fragment {
         mBarChart.getAxisLeft().setAxisMaximum(max);
         mBarChart.getAxisLeft().setAxisMinimum(min);
     }
-    public void updateBardata(BarChart mBarChart,int min,int max){
+    public void updateBardata(BarChart mBarChart,float min,float max){
         setMaxAndMix(mBarChart);
         List<BarEntry> barEntries = new ArrayList<>();
         barEntries.add(new BarEntry(0, max));

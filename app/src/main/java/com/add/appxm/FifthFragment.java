@@ -2,6 +2,7 @@ package com.add.appxm;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +18,7 @@ import com.add.appxm.databinding.ActivityWeaBinding;
 import org.greenrobot.eventbus.EventBus;
 
 public class FifthFragment extends Fragment {
-    public String text;
+    public String text = "";
     ActivityAlarmBinding binding;
     @Nullable
     @Override
@@ -30,9 +31,20 @@ public class FifthFragment extends Fragment {
         binding.setTxt(text);
         return binding.getRoot();
     }
-    public void updateText(String text){
-        if (!TextUtils.isEmpty(text))
-        this.text = text;
-        binding.setTxt(text);
+    public boolean isShow;
+    public void updateText(Alarm text){
+         if(text.state.equals("1")){
+             if(!this.text.equals(text.des)){
+                 this.text = text.des;
+                 Log.i("TAG",text.des);
+                 if(binding!=null)
+                 binding.setTxt(text.des);
+             }
+            isShow = true;
+         }else{
+             isShow = false;
+             this.text = null;
+         }
+
     }
 }

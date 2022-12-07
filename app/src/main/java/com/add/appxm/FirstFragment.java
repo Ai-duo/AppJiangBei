@@ -27,6 +27,8 @@ public class FirstFragment extends Fragment {
         if(live!=null){
             EventBus.getDefault().post(new UpdateTime("更新时间:"+live.updatetime));
             inflate.setLive(live);
+        }else{
+            EventBus.getDefault().post(new UpdateTime("暂无数据"));
         }
         return inflate.getRoot();
     }

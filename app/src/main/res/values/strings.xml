@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">AppHS</string>
-    <dimen name="maintitle">23sp</dimen>
-    <dimen name="maindate">11sp</dimen>
-    <dimen name="mainwea">20sp</dimen>
+    <string name="app_name">AppPingYang</string>
+    <dimen name="maintitle">25sp</dimen>
+    <dimen name="maindate">12sp</dimen>
+    <dimen name="mainwea">13sp</dimen>
     <dimen name="mainweainfo">35sp</dimen>
     <dimen name="firstpagepadd">7px</dimen>
     <dimen name="firstpagetextsize">12sp</dimen>

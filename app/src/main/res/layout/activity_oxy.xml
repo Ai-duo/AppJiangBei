@@ -1,0 +1,85 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="index"
+            type="Integer" />
+        <variable
+            name="oxy"
+            type="com.add.appxm.Oxy" />
+        <variable
+            name="info"
+            type="String" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_marginTop="5px"
+        android:layout_marginBottom="20px"
+        android:background="@drawable/b3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+     <LinearLayout
+         android:orientation="vertical"
+         android:layout_width="0px"
+         android:layout_height="match_parent"
+         android:layout_weight="1">
+         <TextView
+
+             android:textColor="#ff0"
+             android:textSize="25sp"
+             android:gravity="center"
+             android:layout_width="match_parent"
+             android:layout_height="0px"
+             android:layout_weight="0.3"/>
+         <ImageView
+             android:id="@+id/OxImage"
+             setOxImage="@{index}"
+             android:layout_width="match_parent"
+             android:layout_height="0px"
+             android:layout_weight="3.3"
+             android:paddingLeft="30px"
+             android:paddingTop="25px"
+             android:paddingRight="15px"
+             android:scaleType="fitXY"
+             android:src="@drawable/ox" />
+
+         <TextView
+
+             android:textColor="#ff0"
+             android:textSize="25sp"
+             android:gravity="center"
+             android:layout_width="match_parent"
+             android:layout_height="0px"
+             android:layout_weight="0.7"/>
+     </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1.2"
+                android:gravity="center_horizontal|bottom"
+                android:text="@{oxy.ndu}"
+                android:textColor="#fff"
+                android:textSize="40sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="0.8"
+                android:gravity="center"
+                android:text="@{info}"
+                android:textColor="#55ff55"
+                android:textSize="25sp" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

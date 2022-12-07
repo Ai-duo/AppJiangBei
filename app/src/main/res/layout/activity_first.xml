@@ -21,8 +21,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="20px"
-        android:layout_marginBottom="30px"
+        android:layout_marginTop="5px"
+        android:layout_marginBottom="20px"
         android:orientation="vertical">
 
         <LinearLayout
@@ -31,315 +31,6 @@
             android:layout_weight="1"
             android:background="@drawable/b1"
             android:orientation="horizontal">
-            <!-- <LinearLayout
-                 android:layout_width="match_parent"
-                 android:layout_height="0px"
-                 android:layout_weight="4"
-                 android:orientation="horizontal"
-                 android:visibility="gone">
-
-                 <LinearLayout
-                     android:layout_width="0px"
-                     android:layout_height="match_parent"
-                     android:layout_weight="1"
-                     android:background="@drawable/bk1"
-                     android:orientation="vertical">
-
-                     <ImageView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1.2"
-                         android:paddingLeft="@dimen/firstpagepadd"
-                         android:paddingTop="@dimen/firstpagepadd"
-                         android:paddingRight="@dimen/firstpagepadd"
-                         android:paddingBottom="@dimen/firstpagepadd"
-                         android:src="@drawable/wd" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center"
-                         android:text="温度"
-                         android:textColor="@color/textColor"
-                         android:textSize="@dimen/firstpagetextsize" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center"
-                         android:text="@{live.wea_wendu+`\n`}"
-                         android:textSize="@dimen/firstpageindexsize" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center"
-                         android:text="@{`日最高\n`+live.wea_Maxwendu+`\n`}"
-                         android:textSize="@dimen/firstpageindexsize"
-                         android:visibility="gone" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center"
-                         android:text="@{`日最低\n`+live.wea_Minwendu+`\n`}"
-                         android:textSize="@dimen/firstpageindexsize"
-                         android:visibility="invisible" />
-                 </LinearLayout>
-
-                 <LinearLayout
-                     android:layout_width="0px"
-                     android:layout_height="match_parent"
-                     android:layout_weight="1"
-                     android:background="@drawable/bk2"
-                     android:orientation="vertical">
-
-                     <ImageView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1.2"
-                         android:paddingLeft="@dimen/firstpagepadd"
-                         android:paddingTop="@dimen/firstpagepadd"
-                         android:paddingRight="@dimen/firstpagepadd"
-                         android:paddingBottom="@dimen/firstpagepadd"
-                         android:src="@drawable/sd" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center"
-                         android:text="湿度"
-                         android:textColor="@color/textColor"
-                         android:textSize="@dimen/firstpagetextsize" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center"
-                         android:text="@{live.wea_shidu+`\n`}"
-                         android:textSize="@dimen/firstpageindexsize" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center"
-                         android:text="@{`日最高\n`+live.wea_Maxshidu+`\n`}"
-                         android:textSize="@dimen/firstpageindexsize"
-                         android:visibility="gone" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center"
-                         android:text="@{`日最低\n`+live.wea_Minshidu+`\n`}"
-                         android:textSize="@dimen/firstpageindexsize"
-                         android:visibility="invisible" />
-                 </LinearLayout>
-
-                 <LinearLayout
-                     android:layout_width="0px"
-                     android:layout_height="match_parent"
-                     android:layout_weight="1"
-                     android:background="@drawable/bk3"
-                     android:orientation="vertical">
-
-                     <ImageView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1.2"
-                         android:paddingLeft="@dimen/firstpagepadd"
-                         android:paddingTop="@dimen/firstpagepadd"
-                         android:paddingRight="@dimen/firstpagepadd"
-                         android:paddingBottom="@dimen/firstpagepadd"
-                         android:src="@drawable/js" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center"
-                         android:text="降水"
-                         android:textColor="@color/textColor"
-                         android:textSize="@dimen/firstpagetextsize" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center"
-                         android:text="@{live.wea_yuliang+`\n`}"
-                         android:textSize="@dimen/firstpageindexsize" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center"
-                         android:visibility="gone" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center" />
-                 </LinearLayout>
-
-                 <LinearLayout
-                     android:layout_width="0px"
-                     android:layout_height="match_parent"
-                     android:layout_weight="1"
-                     android:background="@drawable/bk4"
-                     android:orientation="vertical">
-
-                     <ImageView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1.2"
-                         android:paddingLeft="@dimen/firstpagepadd"
-                         android:paddingTop="@dimen/firstpagepadd"
-                         android:paddingRight="@dimen/firstpagepadd"
-                         android:paddingBottom="@dimen/firstpagepadd"
-                         android:src="@drawable/fs" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center"
-                         android:text="风速"
-                         android:textColor="@color/textColor"
-                         android:textSize="@dimen/firstpagetextsize" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center"
-                         android:text="@{live.wea_fengsu+`\n`}"
-                         android:textSize="@dimen/firstpageindexsize" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center"
-                         android:text="@{`最大\n`+live.wea_Maxfengsu+`\n`}"
-                         android:textSize="@dimen/firstpageindexsize"
-                         android:visibility="gone" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center" />
-                 </LinearLayout>
-
-                 <LinearLayout
-                     android:layout_width="0px"
-                     android:layout_height="match_parent"
-                     android:layout_weight="1"
-                     android:background="@drawable/bk5"
-                     android:orientation="vertical">
-
-                     <ImageView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1.2"
-                         android:paddingLeft="@dimen/firstpagepadd"
-                         android:paddingTop="@dimen/firstpagepadd"
-                         android:paddingRight="@dimen/firstpagepadd"
-                         android:paddingBottom="@dimen/firstpagepadd"
-                         android:src="@drawable/fx" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center"
-                         android:text="风向"
-                         android:textColor="@color/textColor"
-                         android:textSize="@dimen/firstpagetextsize" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center"
-                         android:text="@{live.wea_fengxiang+`\n`}"
-                         android:textSize="@dimen/firstpageindexsize" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center"
-                         android:visibility="gone" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center" />
-                 </LinearLayout>
-
-
-                 <LinearLayout
-                     android:layout_width="0px"
-                     android:layout_height="match_parent"
-                     android:layout_weight="1"
-                     android:background="@drawable/bk6"
-                     android:orientation="vertical">
-
-                     <ImageView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1.2"
-                         android:paddingLeft="@dimen/firstpagepadd"
-                         android:paddingTop="@dimen/firstpagepadd"
-                         android:paddingRight="@dimen/firstpagepadd"
-                         android:paddingBottom="@dimen/firstpagepadd"
-                         android:src="@drawable/qy" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center"
-                         android:text="气压"
-                         android:textColor="@color/textColor"
-                         android:textSize="@dimen/firstpagetextsize" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center"
-                         android:text="@{live.wea_qiya+`\n`}"
-                         android:textSize="@dimen/firstpageindexsize" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center"
-                         android:visibility="gone" />
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="0px"
-                         android:layout_weight="1"
-                         android:gravity="center" />
-                 </LinearLayout>
-             </LinearLayout>-->
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -359,8 +50,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1.5"
                         android:paddingLeft="10px"
-                        android:paddingTop="15px"
-                        android:paddingBottom="15px"
+                        android:paddingTop="5px"
+                        android:paddingBottom="5px"
                         android:scaleType="fitXY"
                         android:src="@drawable/wd" />
 
@@ -397,8 +88,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1.5"
                         android:paddingLeft="10px"
-                        android:paddingTop="15px"
-                        android:paddingBottom="15px"
+                        android:paddingTop="5px"
+                        android:paddingBottom="5px"
                         android:scaleType="fitXY"
                         android:src="@drawable/fx" />
 
@@ -438,8 +129,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1.5"
                         android:paddingLeft="10px"
-                        android:paddingTop="15px"
-                        android:paddingBottom="15px"
+                        android:paddingTop="5px"
+                        android:paddingBottom="5px"
                         android:scaleType="fitXY"
                         android:src="@drawable/js" />
 
@@ -484,8 +175,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1.5"
                         android:paddingLeft="10px"
-                        android:paddingTop="15px"
-                        android:paddingBottom="15px"
+                        android:paddingTop="5px"
+                        android:paddingBottom="5px"
                         android:scaleType="fitXY"
                         android:src="@drawable/sd" />
 
@@ -522,8 +213,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1.5"
                         android:paddingLeft="10px"
-                        android:paddingTop="15px"
-                        android:paddingBottom="15px"
+                        android:paddingTop="5px"
+                        android:paddingBottom="5px"
                         android:scaleType="fitXY"
                         android:src="@drawable/fs" />
 
@@ -563,8 +254,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1.5"
                         android:paddingLeft="10px"
-                        android:paddingTop="15px"
-                        android:paddingBottom="15px"
+                        android:paddingTop="5px"
+                        android:paddingBottom="5px"
                         android:scaleType="fitXY"
                         android:src="@drawable/qy" />
 

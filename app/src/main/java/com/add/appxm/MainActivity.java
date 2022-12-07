@@ -58,6 +58,7 @@ public class MainActivity extends FragmentActivity {
     FifthFragment fifthFragment;
     ImgFragment imgFragment;
     VideoFragment videoFragment;
+    OxyFragment oxyFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,22 +71,6 @@ public class MainActivity extends FragmentActivity {
         initTask();
         bindCardSystemUartAidl();
         startGetUart();
-      /*  final String in1 = "DMGD WXNo1 2018-11-12 16:23 1111111111111000000000000000001111111111111111111111000000000000000110000000000000000000000000000001100000000000000000000000000000000000000 242 4 242 6 174 11 1607 233 3 166 12 1601 0 119 124 1611 118 1622 120 123 1611 120 1622 84 89 1611 84 1622 135 137 136 136 138 141 143 11 23////////////////////00000000000011000000000000 244 5 *4T";
-        final  String in = "DMSD WXNo1 2018-11-12 16:23 111111110 29 49 36 48 12 30 98 122 *66";
-        Timer timer = new Timer();
-
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                getElements(in1);
-               *//* try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                getTuRangInfo(in);*//*
-            }
-        }, 0, 5000);*/
         changFragment();
     }
     public void bindCardSystemUartAidl() {
@@ -107,11 +92,13 @@ public class MainActivity extends FragmentActivity {
         fifthFragment = new FifthFragment();
         imgFragment = new ImgFragment();
         videoFragment = new VideoFragment();
+        oxyFragment = new OxyFragment();
     }
 
     Timer timer, timer1, timer2;
     int index1 =0;
-
+    int count = 30000;
+    int c = 3;
     public void changFragment() {
         timer = new Timer();
         timer.schedule(new TimerTask() {
@@ -119,51 +106,33 @@ public class MainActivity extends FragmentActivity {
             public void run() {
                 FragmentManager manager = getSupportFragmentManager();
                 FragmentTransaction transaction = manager.beginTransaction();
-                if (index1 ==40000) index1 = 0;
-                int result = index1 % 4;
+                if(fifthFragment.isShow){
+                    count = 40000;
+                    c = 4;
+                }else{
+                    count = 30000;
+                    c = 3;
+                }
+                if (index1 ==count) index1 = 0;
+                int result = index1 % c;
                 EventBus.getDefault().post(result);
                 if (result == 0) {
                     transaction.replace(R.id.contenter, firstFragment);
                     transaction.commit();
                 } else if (result == 1) {
-                    transaction.replace(R.id.contenter, secondFragment);
-                    transaction.commit();
-                } else if (result == 2) {
                     transaction.replace(R.id.contenter, thirdFragment);
                     transaction.commit();
-                } else if (result == 3) {
-
-                    transaction.replace(R.id.contenter, fourthFragment);
+                } else if (result == 2) {
+                    transaction.replace(R.id.contenter, oxyFragment);
                     transaction.commit();
-                    try {
-                        Thread.sleep(15000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                } else if (result == 4) {
+                }else if (result == 3) {
                     transaction.replace(R.id.contenter, fifthFragment);
                     transaction.commit();
-                }else if (result == 5) {
-                    transaction.replace(R.id.contenter, imgFragment);
-                    transaction.commit();
-                    try {
-                        Thread.sleep(25*1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                } else if (result == 6) {
-                    transaction.replace(R.id.contenter, videoFragment);
-                    transaction.commit();
-                    try {
-                        Thread.sleep(204*1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
                 }
 
                index1++;
             }
-        }, 0, 6 * 1000);
+        }, 0, 10 * 1000);
 
     }
 
@@ -176,12 +145,49 @@ public class MainActivity extends FragmentActivity {
             public void run() {
                 OkHttpClient client = new OkHttpClient();
                // final Request live = new Request.Builder().url("http://115.220.4.68:8081/qxdata/QxService.svc/getnewzdzhourdata/K2160").build();
-                Request zhish = new Request.Builder().url("http://115.220.4.68:8081/qxdata/QxService.svc/gettszsybdata/K2160").build();
+                Request elememt = new Request.Builder().url("http://61.153.246.242:8888/qxdata/QxService.svc/getnewzdzhourdata/58751").build();
+                Request oxy = new Request.Builder().url("http://115.220.4.68:8081/qxdata/QxService.svc/getqxo2data/KL001").build();
+                Request wea = new Request.Builder().url("http://61.153.246.242:8888/qxdata/QxService.svc/getdayybdata/58751").build();
+                Request alarm = new Request.Builder().url("http://61.153.246.242:8888/qxdata/QxService.svc/getqxalarmdata/58751").build();
+                Request seven = new Request.Builder().url("http://61.153.246.242:8888/qxdata/QxService.svc/get7dayybdata/58751").build();
 
-                Request wea = new Request.Builder().url("http://115.220.4.68:8081/qxdata/QxService.svc/getdayybdata/K2160").build();
-                Request seven = new Request.Builder().url("http://115.220.4.68:8081/qxdata/QxService.svc/get7dayybdata/K2160").build();
+                client.newCall(elememt).enqueue(new Callback() {
+                    @Override
+                    public void onFailure(Call call, IOException e) {
 
-               /* client.newCall(live).enqueue(new Callback() {
+                    }
+
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+                        String body = response.body().string();
+                        Log.i("TAG", "body:" + body);
+                        if (TextUtils.isEmpty(body) || body.length() < 5) return;
+                        Gson gson = new Gson();
+                        Live lives = gson.fromJson(body, Live.class);
+                        EventBus.getDefault().post(lives);
+                    }
+
+                });
+
+                client.newCall(oxy).enqueue(new Callback() {
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+
+                    }
+
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+                        String body = response.body().string();
+                        body = body.replace("负氧离子浓度:","");
+                        Log.i("TAG", "body:" + body);
+                        if (TextUtils.isEmpty(body) || body.length() < 5) return;
+                        Gson gson = new Gson();
+                        Oxy lives = gson.fromJson(body, Oxy.class);
+                        EventBus.getDefault().post(lives);
+                    }
+
+                });
+                client.newCall(alarm).enqueue(new Callback() {
                     @Override
                     public void onFailure(Call call, IOException e) {
 
@@ -192,11 +198,12 @@ public class MainActivity extends FragmentActivity {
                         String body = response.body().string();
                         if (TextUtils.isEmpty(body) || body.length() < 5) return;
                         Gson gson = new Gson();
-                        Live lives = gson.fromJson(body, Live.class);
+                        Alarm lives = gson.fromJson(body, Alarm.class);
                         EventBus.getDefault().post(lives);
                     }
-                });*/
-                client.newCall(zhish).enqueue(new Callback() {
+
+                });
+              /*  client.newCall(zhish).enqueue(new Callback() {
                     @Override
                     public void onFailure(Call call, IOException e) {
 
@@ -211,7 +218,7 @@ public class MainActivity extends FragmentActivity {
                         EventBus.getDefault().post(lives);
                     }
 
-                });
+                });*/
                 client.newCall(wea).enqueue(new Callback() {
                     @Override
                     public void onFailure(Call call, IOException e) {
@@ -263,7 +270,7 @@ public class MainActivity extends FragmentActivity {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void updateWea(Wea index) {
         Log.i("TAG", "收到：" + index.toString());
-        fourthFragment.updateText(index.wea_txt1);
+        mainBinding.setWea(index);
     }
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void updateSeven(SevenWea index) {
@@ -280,7 +287,18 @@ public class MainActivity extends FragmentActivity {
         mainBinding.setLive(live);
         firstFragment.updateInfo(live);
     }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void updateOxy(Oxy live) {
 
+        oxyFragment.updateInfo(live);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void updateOxy(Alarm alarm) {
+        Log.i("TAG", "收到：预警");
+        if(alarm==null)return;
+        fifthFragment.updateText(alarm);
+    }
     public TimerTask dates;
     final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy年M月dd日 HH:mm");
 

@@ -49,7 +49,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginBottom="2px"
+            android:layout_marginBottom="1px"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -59,7 +59,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="江北气象"
+                android:text="平阳气象"
                 android:textSize="@dimen/maintitle" />
 
             <TextView
@@ -75,7 +75,7 @@
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center_vertical|right"
+                android:gravity="center"
                 android:paddingRight="9px"
                 android:text="@{date}"
                 android:textSize="@dimen/maindate" />
@@ -91,8 +91,8 @@
             <LinearLayout
                 android:layout_width="0px"
                 android:layout_height="match_parent"
-                android:layout_weight="0.1"
-                android:visibility="invisible"></LinearLayout>
+                android:layout_weight="0.2"
+                android:visibility="invisible"/>
 
             <LinearLayout
                 android:layout_width="0px"
@@ -104,7 +104,7 @@
                     setTextColor="@{backIndex}"
                     android:gravity="center"
                     android:text="@{update}"
-                    android:textSize="12sp"
+                    android:textSize="15sp"
                     android:layout_width="match_parent"
                     android:layout_height="0px"
                     android:layout_weight="0.3" />
@@ -116,8 +116,13 @@
                     android:layout_weight="3.2"
                     android:orientation="horizontal" />
             </LinearLayout>
-
             <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:visibility="invisible"/>
+            <LinearLayout
+                android:visibility="gone"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="0.8"
@@ -145,9 +150,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.6"
             android:orientation="horizontal"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
 
@@ -166,8 +171,8 @@
                 android:layout_weight="5"
                 android:background="#555"
                 app:marqueeview_text_color="#fff"
-                app:marqueeview_text_size="50"
-                app:marqueeview_text_speed="2.0"
+                app:marqueeview_text_size="15"
+                app:marqueeview_text_speed="1.0"
                 app:setText="@{wea.wea_txt1}" />
         </LinearLayout>
     </LinearLayout>
